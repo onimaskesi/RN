@@ -2,16 +2,22 @@ import React from 'react';
 import {SafeAreaView, View, Text, FlatList, StyleSheet} from 'react-native';
 import news_datas from './news_data';
 import NewsCard from './components/NewsCard';
+import Banner from './components/Banner';
+import news_banner_datas from './news_banner_data.json';
 
 function App() {
+  const renderNews = ({item}) => <NewsCard news={item} />;
+  const keyExtractor = (item, index) => item.u_id.toString();
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>News</Text>
       <View style={styles.body}>
         <FlatList
+          ListHeaderComponent={() => <Banner banner={news_banner_datas} />}
           data={news_datas}
-          renderItem={({item}) => <NewsCard news={item} />}
-          keyExtractor={(item, index) => item.u_id.toString()}
+          renderItem={renderNews}
+          keyExtractor={keyExtractor}
         />
       </View>
     </SafeAreaView>
