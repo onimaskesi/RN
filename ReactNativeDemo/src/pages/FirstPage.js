@@ -1,18 +1,11 @@
 import React, {useState} from 'react';
-import {
-  TextInput,
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  Button,
-  Dimensions,
-} from 'react-native';
+import {TextInput, SafeAreaView, Text, StyleSheet, Button} from 'react-native';
 
 function FirstPage(props) {
   const [userName, setUserName] = useState('');
 
   function navigateToSecondPageWithUserName() {
-    props.navigation.navigate('SecondScreen', {userName: userName});
+    props.navigation.navigate('SecondScreen', {userName});
   }
 
   function inputChange(value) {
@@ -20,7 +13,7 @@ function FirstPage(props) {
   }
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Hello Word from First Page</Text>
+      <Text style={styles.text}>Hello Word from First Screen</Text>
       <TextInput
         style={styles.input}
         value={userName}
