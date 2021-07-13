@@ -12,6 +12,7 @@ function App() {
   const [userList, setUserList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  /*
   async function fetchData() {
     const response = await axios.get(
       'https://jsonplaceholder.typicode.com/users',
@@ -19,6 +20,17 @@ function App() {
 
     setUserList(response.data);
     setIsLoading(false);
+  }
+  */
+
+  function fetchData() {
+    axios
+      .get('https://jsonplaceholder.typicode.com/users')
+      .then(response => {
+        setUserList(response.data);
+        setIsLoading(false);
+      })
+      .catch(err => console.log(err));
   }
 
   useEffect(() => {
