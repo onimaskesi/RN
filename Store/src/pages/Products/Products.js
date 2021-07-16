@@ -5,11 +5,10 @@ import ProductCard from '../../components/ProductCard';
 import useFetch from '../../hooks/useFetch';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
-
-const API_URL = 'https://fakestoreapi.com/products';
+import Config from 'react-native-config';
 
 function Products({navigation}) {
-  const {data, isLoading, error} = useFetch(API_URL);
+  const {data, isLoading, error} = useFetch(Config.API_PRODUCTS_URL);
 
   if (isLoading) {
     return <Loading />;
