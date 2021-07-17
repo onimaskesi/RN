@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList} from 'react-native';
+import {View, FlatList, Button} from 'react-native';
 import styles from './Products.style';
 import ProductCard from '../../components/ProductCard';
 import useFetch from '../../hooks/useFetch';

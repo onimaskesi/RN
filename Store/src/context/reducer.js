@@ -7,6 +7,10 @@ export default (state, action) => {
       AsyncStorage.setItem('@USER', JSON.stringify(user));
       return {...state, user};
 
+    case 'REMOVE_USER':
+      AsyncStorage.removeItem('@USER');
+      return {...state, user: null};
+
     default:
       return state;
   }
