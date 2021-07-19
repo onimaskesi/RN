@@ -22,7 +22,6 @@ function Messages({navigation}) {
         if (snapshot) {
           const parsedMessages = parseMessages(snapshot.val());
           setMessages(parsedMessages);
-          console.log(parsedMessages);
         }
       });
   }
