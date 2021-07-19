@@ -9,6 +9,7 @@ import Messages from './pages/Messages';
 import strings from './strings';
 import colors from './styles/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FlashMessage from 'react-native-flash-message';
 
 const Stack = createStackNavigator();
 
@@ -63,6 +64,7 @@ function Router() {
   return (
     <NavigationContainer>
       {userSession ? <AppStack /> : <AuthStack />}
+      <FlashMessage position="top" />
     </NavigationContainer>
   );
 }

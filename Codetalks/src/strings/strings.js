@@ -6,7 +6,7 @@ export default {
   passwordAgain: 'Parola Tekrar',
   passwordsNotSame: 'Parolalar Aynı Değil!',
   invalidEmail: 'E-posta Adresiniz Yanlış Formattadır!',
-  successSignUp: 'Kafa Ütülemeye Başlayabilirsin',
+  successSignUp: 'Üye işlemi başarılı',
   weakPassword: 'Daha Güçlü Bir Parola Giriniz!',
   emailAlreadyInUse: 'Bu E-posta Adresi Zaten Kullanılıyor!',
   userNotFound: 'Kullanıcı Bulunamadı!',
