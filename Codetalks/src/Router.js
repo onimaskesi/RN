@@ -8,6 +8,7 @@ import Rooms from './pages/Rooms';
 import Messages from './pages/Messages';
 import strings from './strings';
 import colors from './styles/colors';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Stack = createStackNavigator();
 
@@ -32,7 +33,20 @@ function AppStack() {
         component={Rooms}
         options={{title: strings.rooms}}
       />
-      <Stack.Screen name="Messages" component={Messages} />
+      <Stack.Screen
+        name="Messages"
+        component={Messages}
+        options={{
+          headerRight: () => (
+            <Icon
+              name="logout"
+              size={30}
+              color={colors.orange}
+              onPress={() => auth().signOut()}
+            />
+          ),
+        }}
+      />
     </Stack.Navigator>
   );
 }
