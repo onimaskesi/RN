@@ -27,8 +27,15 @@ test('should triggered onPress', () => {
   expect(mockFunction).toBeCalled();
 });
 
+test('should render default theme style as primary style', () => {
+  const comp = render(<Button />);
+
+  const buttonStyle = comp.getByTestId('button-touchable').props.style;
+  expect(buttonStyle).toMatchObject(styles.primary.container);
+});
+
 test('should render given theme style', () => {
-  const selectedTheme = 'primary';
+  const selectedTheme = 'secondary';
   const comp = render(<Button theme={selectedTheme} />);
 
   const buttonStyle = comp.getByTestId('button-touchable').props.style;
