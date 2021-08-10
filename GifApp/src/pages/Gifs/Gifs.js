@@ -9,6 +9,7 @@ import strings from '../../strings';
 import Loading from '../../components/Loading';
 import getColor from '../../styles/getColor';
 import Error from '../../components/Error';
+import Button from '../../components/Button';
 
 const apiKey = Config.API_KEY;
 let offset = 0;
@@ -17,13 +18,6 @@ let searchText = '';
 const gifsNumberPerPage = 20;
 
 const keyExt = item => item.id;
-const renderGifs = ({item}) => {
-  return item.images.hasOwnProperty('fixed_height_small') ? (
-    <GifCard gifUrl={item.images.fixed_height_small.url} color={getColor()} />
-  ) : (
-    <GifCard gifUrl={item.images.original.url} color={getColor()} />
-  );
-};
 
 const initNextOffsetValue = () => {
   offset + gifsNumberPerPage > maxOffset
@@ -98,6 +92,30 @@ export default ({navigation}) => {
     flatListRef.current &&
       flatListRef.current.scrollToOffset({animated: true, offset: 0});
   };
+
+  const navigateToDetail = gif => {
+    return () => navigation.navigate(strings.detailsPageName, gif);
+  };
+
+  const renderGifs = ({item}) => {
+    const {images} = item;
+    return (
+      <GifCard
+        gifUrl={
+          images.hasOwnProperty('fixed_height_small')
+            ? images.fixed_height_small.url
+            : images.original.url
+        }
+        color={getColor()}
+        onClick={navigateToDetail(item)}
+      />
+    );
+  };
+
+  const navigateToFavorites = () => {
+    navigation.navigate(strings.favoritesPageName);
+  };
+
   return (
     <View style={styles.container}>
       {error ? (
@@ -120,6 +138,7 @@ export default ({navigation}) => {
               keyExtractor={keyExt}
             />
           )}
+          <Button title="My Favorites" onClick={() => navigateToFavorites()} />
           {isLoading && <Loading />}
         </>
       )}

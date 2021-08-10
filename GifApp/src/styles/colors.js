@@ -4,4 +4,5 @@ export default {
   blue: '#1a237e',
   purple: '#880e4f',
   pink: '#ff79ff',
+  backgroundColor: 'black',
 };

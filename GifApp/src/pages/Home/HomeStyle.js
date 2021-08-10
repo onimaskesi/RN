@@ -1,10 +1,11 @@
 import {StyleSheet, Platform} from 'react-native';
+import colors from '../../styles/colors';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'black',
+    backgroundColor: colors.backgroundColor,
   },
   titleConteiner: {
     margin: 10,

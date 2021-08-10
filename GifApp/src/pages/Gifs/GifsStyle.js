@@ -4,7 +4,7 @@ import colors from '../../styles/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: colors.backgroundColor,
     paddingTop: Platform.OS === 'ios' ? 70 : 10,
     paddingBottom: Platform.OS === 'ios' ? 50 : 0,
   },
