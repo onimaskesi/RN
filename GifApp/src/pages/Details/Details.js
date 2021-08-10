@@ -4,54 +4,28 @@ import styles from './DetailsStyle';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FavGifService from '../../services/FavGifService';
 
-const getSmallSizeUrl = gif => {
-  const {images} = gif;
-
-  if (images.hasOwnProperty('fixed_height_small')) {
-    return images.fixed_height_small.url;
-  } else {
-    return images.original.url;
-  }
-};
-
-const transformGifToFavGifObj = gif => {
-  return {
-    id: gif.id,
-    smallSizeUrl: getSmallSizeUrl(gif),
-    originalUrl: gif.images.original.url,
-  };
-};
-
 export default ({navigation, route}) => {
   const [isFav, setIsFav] = useState(false);
   const {setFav, deleteFav, isTheGifFav} = FavGifService;
 
-  const gif = route.params;
-  const {
-    images: {
-      original: {url},
-    },
-  } = gif;
-
-  const favGif = transformGifToFavGifObj(gif);
+  const arangedGif = route.params;
 
   const getIsFavState = async () => {
-    const isF = await isTheGifFav(favGif);
+    const isF = await isTheGifFav(arangedGif);
     console.log(isF);
     setIsFav(isF);
   };
 
   useEffect(() => {
     getIsFavState();
-    console.log(gif.id);
   }, []);
 
   const addFav = async () => {
-    await setFav(favGif);
+    await setFav(arangedGif);
   };
 
   const delFav = async () => {
-    await deleteFav(favGif);
+    await deleteFav(arangedGif);
   };
 
   const favHandler = async () => {
@@ -65,7 +39,7 @@ export default ({navigation, route}) => {
         <Image
           style={styles.gif}
           source={{
-            uri: url,
+            uri: arangedGif.originalUrl,
           }}
         />
       </View>

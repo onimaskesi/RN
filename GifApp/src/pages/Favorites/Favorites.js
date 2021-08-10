@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef, useCallback} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import GifCard from '../../components/GifCard';
 import styles from './FavoritesStyle';
@@ -8,23 +8,27 @@ import strings from '../../strings';
 
 export default ({navigation}) => {
   const [favGifList, setFavGifList] = useState([]);
-  const {getAllFavs, setFav, deleteFav, deleteAll, isTheGifFav} = FavGifService;
-
-  const initFavGifList = async () => {
-    const favList = await getAllFavs();
-    setFavGifList(favList);
-  };
+  const {getAllFavs} = FavGifService;
 
   useEffect(() => {
-    initFavGifList();
+    let isMounted = false;
+    if (!isMounted) {
+      getAllFavs().then(favGifs => {
+        isMounted || setFavGifList(favGifs);
+      });
+    }
+    return () => (isMounted = true);
   });
 
-  const navigateToDetails = () => {
-    navigation.navigate(strings.detailsPageName);
+  const navigateToDetailsWithGif = arrangedGif => {
+    return () => navigation.navigate(strings.detailsPageName, arrangedGif);
   };
 
   const renderFavGifs = ({item}) => (
-    <GifCard gifUrl={item.originalUrl} onClick={() => {}} />
+    <GifCard
+      gifUrl={item.originalUrl}
+      onClick={navigateToDetailsWithGif(item)}
+    />
   );
 
   return (

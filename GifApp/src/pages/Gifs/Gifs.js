@@ -10,6 +10,7 @@ import Loading from '../../components/Loading';
 import getColor from '../../styles/getColor';
 import Error from '../../components/Error';
 import Button from '../../components/Button';
+import arrangeTheGif from '../../utils/arrangeTheGif';
 
 const apiKey = Config.API_KEY;
 let offset = 0;
@@ -94,7 +95,7 @@ export default ({navigation}) => {
   };
 
   const navigateToDetail = gif => {
-    return () => navigation.navigate(strings.detailsPageName, gif);
+    return () => navigation.navigate(strings.detailsPageName, arrangeTheGif(gif));
   };
 
   const renderGifs = ({item}) => {
