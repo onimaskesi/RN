@@ -12,6 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1C070A4126C2B55C00374908 /* PaletteMosaic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C070A4026C2B55C00374908 /* PaletteMosaic-Regular.ttf */; };
+		1C070A4326C2B94900374908 /* Gilroy-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C070A4226C2B94900374908 /* Gilroy-Heavy.otf */; };
+		1C070A4426C2B94900374908 /* Gilroy-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1C070A4226C2B94900374908 /* Gilroy-Heavy.otf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		975E03E96564A7994FDD7CF1 /* libPods-FontFamilyDemo1-FontFamilyDemo1Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9135F2C19EBE726056D3CE8 /* libPods-FontFamilyDemo1-FontFamilyDemo1Tests.a */; };
 		E1624D3B8E08400CB3398FFE /* Gilroy-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A8159ECBC663456B8E3F10F1 /* Gilroy-ExtraBold.otf */; };
@@ -40,6 +42,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FontFamilyDemo1/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FontFamilyDemo1/main.m; sourceTree = "<group>"; };
 		1C070A4026C2B55C00374908 /* PaletteMosaic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PaletteMosaic-Regular.ttf"; sourceTree = "<group>"; };
+		1C070A4226C2B94900374908 /* Gilroy-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FontFamilyDemo1/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8338B3564D45ED3E6E4243B7 /* libPods-FontFamilyDemo1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FontFamilyDemo1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E7E7276216DBC316C824D8 /* Pods-FontFamilyDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontFamilyDemo1.release.xcconfig"; path = "Target Support Files/Pods-FontFamilyDemo1/Pods-FontFamilyDemo1.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		4DA6FE38A4444147A89F60F6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C070A4226C2B94900374908 /* Gilroy-Heavy.otf */,
 				1C070A4026C2B55C00374908 /* PaletteMosaic-Regular.ttf */,
 				A8159ECBC663456B8E3F10F1 /* Gilroy-ExtraBold.otf */,
 				C0481957E78742109518CF25 /* Gilroy-Light.otf */,
@@ -252,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C070A4426C2B94900374908 /* Gilroy-Heavy.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +269,7 @@
 				E1624D3B8E08400CB3398FFE /* Gilroy-ExtraBold.otf in Resources */,
 				EF749B97311E4A57836C1616 /* Gilroy-Light.otf in Resources */,
 				1C070A4126C2B55C00374908 /* PaletteMosaic-Regular.ttf in Resources */,
+				1C070A4326C2B94900374908 /* Gilroy-Heavy.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

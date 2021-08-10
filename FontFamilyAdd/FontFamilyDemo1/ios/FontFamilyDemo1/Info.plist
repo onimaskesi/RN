@@ -53,7 +53,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>Gilroy-Heavy.otf</string>
 		<string>PaletteMosaic-Regular.ttf</string>
 		<string>Gilroy-ExtraBold.otf</string>
 		<string>Gilroy-Light.otf</string>

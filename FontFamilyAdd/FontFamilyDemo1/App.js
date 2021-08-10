@@ -6,7 +6,8 @@ export default () => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.textBold}>Gilroy-ExtraBold</Text>
       <Text style={styles.textLight}>Gilroy-Light</Text>
-      <Text style={styles.textMosaic}>PaletteMosaic-Regular</Text>
+      {/* <Text style={styles.textHeavy}>Gilroy-Heavy</Text>
+      <Text style={styles.textMosaic}>PaletteMosaic-Regular</Text> */}
     </SafeAreaView>
   );
 };
@@ -33,6 +34,10 @@ const styles = StyleSheet.create({
   textLight: {
     ...baseTextStyle,
     fontFamily: 'Gilroy-Light',
+  },
+  textHeavy: {
+    ...baseTextStyle,
+    fontFamily: 'Gilroy-Heavy',
   },
   textMosaic: {
     ...baseTextStyle,
