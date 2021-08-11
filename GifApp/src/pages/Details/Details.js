@@ -12,7 +12,6 @@ export default ({navigation, route}) => {
 
   const getIsFavState = async () => {
     const isF = await isTheGifFav(arangedGif);
-    console.log(isF);
     setIsFav(isF);
   };
 
