@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {View, Image} from 'react-native';
+import {View, Image, Text} from 'react-native';
 import styles from './DetailsStyle';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FavGifService from '../../services/FavGifService';
+import arrangeTheGif from '../../utils/arrangeTheGif';
 
 export default ({navigation, route}) => {
   const [isFav, setIsFav] = useState(false);
@@ -42,13 +43,17 @@ export default ({navigation, route}) => {
           }}
         />
       </View>
-      <View style={styles.footerContainer}>
+      <View style={styles.favContainer}>
         <Icon
+          style={styles.iconStyle}
           name={isFav ? 'heart' : 'heart-outline'}
           color="red"
           size={40}
           onPress={favHandler}
         />
+      </View>
+      <View style={styles.bodyContainer}>
+        <Text style={styles.title}>{arangedGif.title.toUpperCase()}</Text>
       </View>
     </View>
   );

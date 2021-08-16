@@ -26,7 +26,7 @@ export default ({navigation}) => {
 
   const renderFavGifs = ({item}) => (
     <GifCard
-      gifUrl={item.originalUrl}
+      gifUrl={item.smallSizeUrl}
       onClick={navigateToDetailsWithGif(item)}
     />
   );

@@ -95,7 +95,8 @@ export default ({navigation}) => {
   };
 
   const navigateToDetail = gif => {
-    return () => navigation.navigate(strings.detailsPageName, arrangeTheGif(gif));
+    return () =>
+      navigation.navigate(strings.detailsPageName, arrangeTheGif(gif));
   };
 
   const renderGifs = ({item}) => {

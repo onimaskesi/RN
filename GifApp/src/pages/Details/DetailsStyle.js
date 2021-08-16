@@ -8,6 +8,14 @@ export default StyleSheet.create({
     paddingTop: Platform.OS === 'ios' ? 50 : 10,
     flex: 1,
   },
+  title: {
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10,
+    alignSelf: 'center',
+    textAlign: 'center',
+  },
   gifContainer: {
     flex: 1,
     borderColor: 'white',
@@ -19,9 +27,14 @@ export default StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
   },
-  footerContainer: {
-    flex: 1,
+  iconStyle: {
+    alignSelf: 'center',
+  },
+  favContainer: {
     padding: 10,
     flexDirection: 'row-reverse',
+  },
+  bodyContainer: {
+    flex: 1,
   },
 });

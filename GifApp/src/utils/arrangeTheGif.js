@@ -11,6 +11,7 @@ const getSmallSizeUrl = gif => {
 export default gif => {
   return {
     id: gif.id,
+    title: gif.title,
     smallSizeUrl: getSmallSizeUrl(gif),
     originalUrl: gif.images.original.url,
   };
