@@ -37,6 +37,8 @@ export default ({navigation, route}) => {
   useEffect(() => {
     getIsFavState();
     fetchGifs();
+    flatlistRef.current &&
+      flatlistRef.current.scrollToOffset({animated: true, offset: 0});
   }, [route.params]);
 
   const addFav = async () => {
@@ -83,8 +85,9 @@ export default ({navigation, route}) => {
     }
   };
 
-  const renderGif = ({item}) => (
+  const renderGif = ({item, index}) => (
     <GifCard
+      key={item.id + index}
       gifUrl={item.images.fixed_height_small.url}
       color="purple"
       onClick={() =>
@@ -95,45 +98,40 @@ export default ({navigation, route}) => {
 
   return (
     <View style={styles.container}>
-      {error ? (
-        <View style={styles.errorContainer}>
-          <Error errorMessage={error.message} />
+      <View style={styles.gifContainer}>
+        <Image
+          style={styles.gif}
+          source={{
+            uri: arangedGif.originalUrl,
+          }}
+        />
+      </View>
+      <View style={styles.favContainer}>
+        <View style={styles.usernameContainer}>
+          <TouchableOpacity onPress={navigateToGifs}>
+            <Text style={styles.username}>{`by ${arangedGif.username}`}</Text>
+          </TouchableOpacity>
         </View>
-      ) : (
-        <>
-          <View style={styles.gifContainer}>
-            <Image
-              style={styles.gif}
-              source={{
-                uri: arangedGif.originalUrl,
-              }}
-            />
-          </View>
-          <View style={styles.favContainer}>
-            <View style={styles.usernameContainer}>
-              <TouchableOpacity onPress={navigateToGifs}>
-                <Text
-                  style={styles.username}>{`by ${arangedGif.username}`}</Text>
-              </TouchableOpacity>
-            </View>
-            <Icon
-              name={isFav ? 'heart' : 'heart-outline'}
-              color="red"
-              size={40}
-              onPress={favHandler}
-            />
-          </View>
-          <View style={styles.gifsContainer}>
-            <FlatList
-              ref={flatlistRef}
-              data={gifList}
-              onEndReached={() => fetchGifs(true)}
-              onEndReachedThreshold={0}
-              renderItem={renderGif}
-            />
-          </View>
-        </>
-      )}
+        <Icon
+          name={isFav ? 'heart' : 'heart-outline'}
+          color="red"
+          size={40}
+          onPress={favHandler}
+        />
+      </View>
+      <View style={styles.gifsContainer}>
+        {error ? (
+          <Error errorMessage={error.message} />
+        ) : (
+          <FlatList
+            ref={flatlistRef}
+            data={gifList}
+            onEndReached={() => fetchGifs(true)}
+            onEndReachedThreshold={0}
+            renderItem={renderGif}
+          />
+        )}
+      </View>
     </View>
   );
 };
