@@ -27,14 +27,26 @@ export default StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
   },
-  iconStyle: {
-    alignSelf: 'center',
-  },
   favContainer: {
     padding: 10,
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
   },
   bodyContainer: {
+    flex: 1,
+  },
+  usernameContainer: {
+    marginTop: 10,
+    flex: 1,
+  },
+  username: {
+    color: colors.green,
+  },
+  gifsContainer: {
+    flex: 1,
+  },
+  errorContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
     flex: 1,
   },
 });

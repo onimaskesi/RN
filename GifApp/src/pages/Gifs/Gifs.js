@@ -26,7 +26,7 @@ const initNextOffsetValue = () => {
     : (offset += gifsNumberPerPage);
 };
 
-export default ({navigation}) => {
+export default ({navigation, route}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [gifList, setGifList] = useState([]);
   const [error, setError] = useState();
@@ -73,8 +73,14 @@ export default ({navigation}) => {
     }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => fetchGifs(), []);
+  useEffect(() => {
+    offset = 0;
+    if (route.params) {
+      searchText = route.params;
+      setTitle(route.params);
+    }
+    fetchGifs(false);
+  }, [route.params]);
 
   const loadMore = () => {
     fetchGifs();

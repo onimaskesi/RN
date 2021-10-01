@@ -12,6 +12,7 @@ export default gif => {
   return {
     id: gif.id,
     title: gif.title,
+    username: gif.username,
     smallSizeUrl: getSmallSizeUrl(gif),
     originalUrl: gif.images.original.url,
   };
